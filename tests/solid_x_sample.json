@@ -1,0 +1,168 @@
+{
+  "current": {
+    "response": {
+      "Result": 0,
+      "Messages": [
+        "Список данных котла успешно получен"
+      ]
+    },
+    "httpResponseData": {
+      "Result": 0,
+      "Data": {
+        "Status": "Работа",
+        "StatusCode": 1,
+        "Power": "1.5 кВт",
+        "CurrentStage": 1,
+        "Stages": [
+          0.0,
+          1.5,
+          3.0,
+          4.5,
+          6.0,
+          7.5,
+          9.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "Water": "26°C",
+        "DHW": "Ошибка датчика",
+        "Air": "217°C",
+        "Errors": [],
+        "Warnings": []
+      }
+    }
+  },
+  "history": {
+    "response": {
+      "Result": 0,
+      "Messages": [
+        "Список исторических данных котла успешно получен"
+      ]
+    },
+    "boilersData": [
+      {
+        "Time": "2026-10-06T09:50:00Z",
+        "Data": "AQAaAAFA1wABQBoAAUBNBA==",
+        "Info": {
+          "CurPower": 1,
+          "TempWater": 26,
+          "TempOAir": 16385,
+          "TempRoom": 215,
+          "TempDHW": 16385,
+          "TempSSR": 26,
+          "TempAux": 16385,
+          "Pressure": 1101
+        }
+      },
+      {
+        "Time": "2026-10-06T10:00:00Z",
+        "Data": "AQAaAAFA1wABQBoAAUBNBA==",
+        "Info": {
+          "CurPower": 1,
+          "TempWater": 26,
+          "TempOAir": 16385,
+          "TempRoom": 215,
+          "TempDHW": 16385,
+          "TempSSR": 26,
+          "TempAux": 16385,
+          "Pressure": 1101
+        }
+      },
+      {
+        "Time": "2026-10-06T10:05:00Z",
+        "Data": "AQAaAAFA2QABQBoAAUBNBA==",
+        "Info": {
+          "CurPower": 1,
+          "TempWater": 26,
+          "TempOAir": 16385,
+          "TempRoom": 217,
+          "TempDHW": 16385,
+          "TempSSR": 26,
+          "TempAux": 16385,
+          "Pressure": 1101
+        }
+      },
+      {
+        "Time": "2026-10-06T10:10:00Z",
+        "Data": "AQAaAAFA2QABQBoAAUBPBA==",
+        "Info": {
+          "CurPower": 1,
+          "TempWater": 26,
+          "TempOAir": 16385,
+          "TempRoom": 217,
+          "TempDHW": 16385,
+          "TempSSR": 26,
+          "TempAux": 16385,
+          "Pressure": 1103
+        }
+      },
+      {
+        "Time": "2026-10-06T10:15:00Z",
+        "Data": "AQAaAAFA2QABQBoAAUBQBA==",
+        "Info": {
+          "CurPower": 1,
+          "TempWater": 26,
+          "TempOAir": 16385,
+          "TempRoom": 217,
+          "TempDHW": 16385,
+          "TempSSR": 26,
+          "TempAux": 16385,
+          "Pressure": 1104
+        }
+      },
+      {
+        "Time": "2026-10-06T10:20:00Z",
+        "Data": "AQAaAAFA2QABQBoAAUBRBA==",
+        "Info": {
+          "CurPower": 1,
+          "TempWater": 26,
+          "TempOAir": 16385,
+          "TempRoom": 217,
+          "TempDHW": 16385,
+          "TempSSR": 26,
+          "TempAux": 16385,
+          "Pressure": 1105
+        }
+      },
+      {
+        "Time": "2026-10-06T10:25:00Z",
+        "Data": "AQAaAAFA1wABQBsAAUBNBA==",
+        "Info": {
+          "CurPower": 1,
+          "TempWater": 26,
+          "TempOAir": 16385,
+          "TempRoom": 215,
+          "TempDHW": 16385,
+          "TempSSR": 27,
+          "TempAux": 16385,
+          "Pressure": 1101
+        }
+      }
+    ]
+  },
+  "earliest_history": {
+    "response": {
+      "Result": 0,
+      "Messages": [
+        "Список исторических данных котла успешно получен"
+      ]
+    },
+    "boilersData": [
+      {
+        "Time": "2026-07-29T11:25:00Z",
+        "Data": "AAARAAFA2AABQBAAAUAqBQ==",
+        "Info": {
+          "CurPower": 0,
+          "TempWater": 17,
+          "TempOAir": 16385,
+          "TempRoom": 216,
+          "TempDHW": 16385,
+          "TempSSR": 16,
+          "TempAux": 16385,
+          "Pressure": 1322
+        }
+      }
+    ]
+  }
+}

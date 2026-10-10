@@ -1,0 +1,105 @@
+{
+  "title": "ZOTA Net",
+  "config": {
+    "step": {
+      "user": {
+        "title": "ZOTA Net",
+        "description": "Connect your ZOTA account. The Android app uses HTTP on port 81. HTTP sends credentials and tokens without TLS; it requires explicit consent below. HTTPS certificate verification stays enabled.",
+        "data": {
+          "base_url": "API URL",
+          "username": "Username",
+          "password": "Password",
+          "allow_http": "Allow unencrypted HTTP"
+        }
+      },
+      "boilers": {
+        "title": "Select Solid X boilers",
+        "data": {
+          "boilers": "Boilers"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Sign in again",
+        "data": {
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Invalid credentials",
+      "cannot_connect": "Cannot connect. Check the API URL and HTTP consent.",
+      "select_boiler": "Select at least one boiler"
+    },
+    "abort": {
+      "already_configured": "This account is already configured",
+      "no_boilers": "No Solid X boilers found",
+      "reauth_successful": "Authentication updated"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Update settings",
+        "data": {
+          "poll_interval": "Current polling interval (seconds)",
+          "history_interval": "History polling interval (seconds)",
+          "stale_minutes": "History stale after (minutes)",
+          "retry_count": "Retries after an error (0 to disable)",
+          "retry_delay": "Delay between attempts (seconds)"
+        },
+        "description": "Retry current readings after network failures or HTTP 5xx. The retry count excludes the initial request. Default: 1 retry after 2 seconds."
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "power": {
+        "name": "Power"
+      },
+      "water": {
+        "name": "Water temperature"
+      },
+      "air": {
+        "name": "Room temperature"
+      },
+      "dhw": {
+        "name": "DHW temperature"
+      },
+      "stage": {
+        "name": "Power stage"
+      },
+      "status": {
+        "name": "Status"
+      },
+      "error_count": {
+        "name": "Error count"
+      },
+      "warning_count": {
+        "name": "Warning count"
+      },
+      "pressure": {
+        "name": "Pressure (history)"
+      },
+      "radiator": {
+        "name": "Radiator temperature (history)"
+      },
+      "outside": {
+        "name": "Outside temperature (history)"
+      },
+      "timestamp": {
+        "name": "Last history timestamp"
+      }
+    },
+    "binary_sensor": {
+      "errors": {
+        "name": "Errors"
+      },
+      "warnings": {
+        "name": "Warnings"
+      },
+      "history_fresh": {
+        "name": "History fresh"
+      }
+    }
+  }
+}
