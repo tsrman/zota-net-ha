@@ -47,7 +47,7 @@
           "retry_count": "Retries after an error (0 to disable)",
           "retry_delay": "Delay between attempts (seconds)"
         },
-        "description": "Retry current readings after network failures or HTTP 5xx. The retry count excludes the initial request. Default: 1 retry after 2 seconds."
+        "description": "Retry current readings after network failures or HTTP 5xx. The retry count excludes the initial request. Each pause varies randomly by ±20%: 5 seconds means 4–6 seconds. Default: 1 retry with a base delay of 2 seconds."
       }
     }
   },

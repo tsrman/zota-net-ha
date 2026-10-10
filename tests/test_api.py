@@ -216,7 +216,7 @@ class HttpTests(unittest.IsolatedAsyncioTestCase):
         with self.assertRaises(api.ApiError):
             await client.current('SOLID_X', 123)
         self.assertEqual(self.current_count, 3)
-        self.assertGreaterEqual(time.monotonic() - start, 2)
+        self.assertGreaterEqual(time.monotonic() - start, 1.6)
 
     async def test_retry_timeout_increases_and_resets_after_success(self):
         observed = []
@@ -253,6 +253,22 @@ class HttpTests(unittest.IsolatedAsyncioTestCase):
             await self.client.current('SOLID_X', 123)
         self.assertEqual(observed, [20, 40])
         self.assertIn('40 seconds', str(ctx.exception))
+
+    async def test_retry_pause_samples_jitter_for_each_retry(self):
+        from unittest.mock import patch
+        delays = []
+        async def record_delay(seconds):
+            delays.append(seconds)
+        self.mode = 'always503'
+        self.client.retry_count = 2
+        self.client.retry_delay = 5
+        with patch('random.uniform', side_effect=[4.0, 6.0]) as rng, \
+                patch('asyncio.sleep', side_effect=record_delay):
+            with self.assertRaises(api.ApiError):
+                await self.client.current('SOLID_X', 123)
+        self.assertEqual(self.current_count, 3)
+        self.assertEqual(delays, [4.0, 6.0])
+        self.assertEqual([call.args for call in rng.call_args_list], [(4.0, 6.0), (4.0, 6.0)])
 
     async def test_insecure_http_needs_consent(self):
         with self.assertRaises(api.ApiError):

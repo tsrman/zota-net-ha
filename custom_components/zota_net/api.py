@@ -5,6 +5,7 @@ import json
 import math
 import logging
 import re
+import random
 import time
 from urllib.parse import urlsplit
 
@@ -241,9 +242,10 @@ class ZotaApi:
             except TransientApiError as error:
                 if attempt == self.retry_count:
                     raise
-                _LOGGER.debug('Current request failed; retry %s/%s in %s seconds with timeout %s seconds: %s',
-                              attempt + 1, self.retry_count, self.retry_delay, 20 * (attempt + 2), error)
-                await asyncio.sleep(self.retry_delay)
+                delay = random.uniform(self.retry_delay * 0.8, self.retry_delay * 1.2)
+                _LOGGER.debug('Current request failed; retry %s/%s in %.2f seconds with timeout %s seconds: %s',
+                              attempt + 1, self.retry_count, delay, 20 * (attempt + 2), error)
+                await asyncio.sleep(delay)
 
     async def history(self, boiler_type, serial, stages):
         end = datetime.now(timezone.utc).replace(second=0, microsecond=0)
